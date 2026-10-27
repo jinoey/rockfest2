@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>락페에서 살아남기</title>
+<!-- Adobe Fonts: 안상수체 (kit uch8suv) -->
+<script>
+  (function(d) {
+    var config = {
+      kitId: 'uch8suv',
+      scriptTimeout: 3000,
+      async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+  })(document);
+</script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="viewport">
+  <div id="stage">
+
+    <!-- ========== 1. 타이틀 ========== -->
+    <section class="page bg-plain framed is-active" id="p1">
+      <img class="char char1" src="img/p1_char.png" alt="락둥이">
+
+      <h1 class="title" aria-label="락페에서 살아남기">
+        <span class="title-line line1" data-text="락페에서"></span>
+        <span class="title-line line2" data-text="살아남기"></span>
+      </h1>
+      <p class="subtitle">How to Survive at a Rock Festival</p>
+
+      <button class="hand-btn shine-btn p1-start" data-go="p2">
+        <span class="pill">게임 시작</span>
+        <i class="sparkle s1">✦</i><i class="sparkle s2">✦</i><i class="sparkle s3">✦</i>
+      </button>
+    </section>
+
+    <!-- ========== 2. 인사 ========== -->
+    <section class="page bg-crowd framed" id="p2">
+      <img class="char char2" src="img/p2_char.png" alt="손 흔드는 락둥이">
+
+      <div class="dialog dialog-lg">
+        <p class="typing" data-lines='["안녕 나는 락둥이야","내가 처음으로 락 페스티벌에 가게 되었는데","어떤 걸 챙겨야 할지 모르겠어 . . .","","나를 도와줄래?"]'></p>
+      </div>
+
+      <button class="hand-btn float-btn after-typing p2-yes" data-go="p3">
+        <span class="pill pill-light">그래!</span>
+      </button>
+    </section>
+
+    <!-- ========== 3. 게임 방법 ========== -->
+    <section class="page bg-crowd framed" id="p3">
+      <img class="char char3" src="img/p3_char.png" alt="가리키는 락둥이">
+
+      <div class="dialog dialog-lg">
+        <p class="typing" data-lines='["시간 안에 하늘에서 떨어지는 아이템들을 가방에 담아야 해!","손가락을 움직여서 가방을 요리조리 움직여 줘."]'></p>
+      </div>
+
+      <button class="hand-btn shine-btn after-typing p3-start" data-go="p4">
+        <span class="pill pill-light">게임 시작</span>
+        <i class="sparkle s1">✦</i><i class="sparkle s2">✦</i><i class="sparkle s3">✦</i>
+      </button>
+    </section>
+
+    <!-- ========== 4. 가방 고르기 ========== -->
+    <section class="page bg-plain" id="p4">
+      <button class="bag-card bag-black" data-go="p6" aria-label="검정색 가방">
+        <img src="img/card_black.png" alt="">
+      </button>
+      <button class="bag-card bag-sky" data-go="p5" aria-label="하늘색 가방">
+        <img src="img/card_sky.png" alt="">
+      </button>
+      <button class="bag-card bag-beige" data-go="p7" aria-label="베이지색 가방">
+        <img src="img/card_beige.png" alt="">
+      </button>
+
+      <img class="char bar-art p4-bar" src="img/p4_bar.png" alt="부탁하는 락둥이">
+      <p class="bar-text p4-text">가방을 골라줘 !</p>
+    </section>
+
+    <!-- ========== 5. 하늘색 가방 (정답) ========== -->
+    <section class="page bg-plain result" id="p5">
+      <div class="result-box">
+        <img class="result-char char5" src="img/char_happy.png" alt="신난 락둥이">
+        <p class="result-text">겉에 주머니도 많고 방수 재질이라<br>짐도 많이 들어가고 비가 와도 젖지 않겠네!<br><br>이 가방이 딱이야~!</p>
+        <img class="result-card tilt-l" src="img/card_sky.png" alt="하늘색 가방">
+      </div>
+      <button class="hand-btn float-btn p5-next" data-go="p8">
+        <span class="pill pill-lime">다음으로</span>
+      </button>
+    </section>
+
+    <!-- ========== 6. 검정색 가방 ========== -->
+    <section class="page bg-plain result" id="p6">
+      <div class="result-box">
+        <img class="result-char char6" src="img/char_sweat.png" alt="곤란한 락둥이">
+        <p class="result-text">이 가방은 비가 오면 다 젖을 거 같은데?<br>주머니도 많이 없어 보이고...<br><br>다른 가방을 골라줄래?</p>
+        <img class="result-card tilt-r" src="img/card_black.png" alt="검정색 가방">
+        <button class="retry-btn" data-go="p4"><span class="retry-icon">↺</span> 가방 다시 선택하기</button>
+      </div>
+    </section>
+
+    <!-- ========== 7. 베이지색 가방 ========== -->
+    <section class="page bg-plain result" id="p7">
+      <div class="result-box">
+        <img class="result-char char7" src="img/char_think.png" alt="생각하는 락둥이">
+        <p class="result-text">이 가방은 어깨에 멜 수도 없고<br>크기가 너무 작아서 준비물을 넣기엔<br>부족할 것 같아...<br><br>다른 가방을 골라줄래?</p>
+        <img class="result-card tilt-l" src="img/card_beige.png" alt="베이지색 가방">
+        <button class="retry-btn" data-go="p4"><span class="retry-icon">↺</span> 가방 다시 선택하기</button>
+      </div>
+    </section>
+
+    <!-- ========== 8. 카메라 연습 (30초 후 자동 이동) ========== -->
+    <section class="page bg-plain" id="p8">
+      <div class="cam-box cam-p8">
+        <video class="cam-video" autoplay playsinline muted></video>
+        <canvas class="cam-overlay"></canvas>
+        <p class="cam-msg">카메라를 켜는 중이에요…</p>
+        <div class="countdown"><span>게임 시작까지</span><b id="p8-count">15</b></div>
+      </div>
+      <img class="char bar-art p8-bar" src="img/p8_bar.png" alt="가리키는 락둥이">
+      <p class="bar-text p8-text typing" data-lines='["손가락을 움직여 봐 ~"]'></p>
+    </section>
+
+    <!-- ========== 9. 게임 (1분 30초) ========== -->
+    <section class="page bg-light" id="p9">
+      <div class="game-field" id="game-field"></div>
+      <img class="game-bag" id="game-bag" src="img/bag_sky.png" alt="가방">
+
+      <header class="topbar">
+        <h2>하늘에서 떨어지는 준비물을 담자!</h2>
+        <p class="timer">제한시간: <b id="timer">01:00:00</b></p>
+      </header>
+
+      <div class="cam-mini">
+        <div class="cam-box cam-p9">
+          <video class="cam-video" autoplay playsinline muted></video>
+          <canvas class="cam-overlay"></canvas>
+          <p class="cam-msg"></p>
+        </div>
+        <p class="cam-hint">손가락으로<br>가방을 움직이세요!</p>
+        <p class="caught-count">담은 준비물 <b id="caught-count">0</b>개</p>
+      </div>
+    </section>
+
+    <!-- ========== 10. 챙긴 준비물 확인 (+ 11. 상세 팝업) ========== -->
+    <section class="page bg-light" id="p10">
+      <header class="topbar"><h2>내가 챙긴 준비물이 뭐지?</h2></header>
+
+      <div class="item-grid" id="item-grid"></div>
+      <p class="grid-empty" id="grid-empty">이런… 아무것도 챙기지 못했어!</p>
+
+      <button class="hand-btn float-btn p10-next" data-go="p12">
+        <span class="pill pill-lime">다음으로</span>
+      </button>
+
+      <!-- 11페이지: 아이템 상세 -->
+      <div class="item-modal" id="item-modal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-name">
+          <button class="modal-close" id="modal-close" aria-label="닫기">✕</button>
+          <h3 id="modal-name"></h3>
+          <div class="modal-img"><img id="modal-img" src="" alt=""></div>
+          <p class="modal-desc" id="modal-desc"></p>
+          <img class="modal-char" id="modal-char" src="img/char_happy.png" alt="">
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 12. 기념샷 ========== -->
+    <section class="page bg-neon" id="p12">
+      <h2 class="end-title">락페에서 살아남았다 ~ !</h2>
+      <div class="cam-box cam-p12">
+        <video class="cam-video" autoplay playsinline muted></video>
+        <canvas class="pose-canvas" id="pose-canvas" width="1728" height="808"></canvas>
+        <p class="cam-msg"></p>
+        <div class="pose-sticker" id="pose-sticker">
+          <span class="pose-emoji"></span><span class="pose-text"></span>
+          <span class="pose-bar"><i></i></span>
+        </div>
+      </div>
+      <div class="pose-hints">
+        <span class="pose-chip" data-g="rock">🤘 락피스</span>
+        <span class="pose-chip" data-g="peace">✌️ 브이</span>
+        <span class="pose-chip" data-g="heart">🫶 하트</span>
+        <span class="pose-say">포즈를 취해 봐!</span>
+      </div>
+      <button class="hand-btn shine-btn p12-home" id="home-btn" data-go="p1">
+        <span class="pill pill-lime">처음으로</span>
+      </button>
+    </section>
+
+  </div>
+</div>
+
+<button id="sound-btn" class="sound-btn" type="button">🔊</button>
+
+<script src="sound.js"></script>
+<script src="items.js"></script>
+<script src="pose.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
